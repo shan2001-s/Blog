@@ -60,31 +60,31 @@ function NavBar(props) {
 
   const container = window !== undefined ? () => window().document.body : undefined;
   // for dark & Light mode
-  const [mode, setMode] = React.useState('light');
-  const colorMode = React.useMemo(
-    () => ({
-      Home: () => {
-        setMode((prevMode) => (prevMode === 'light' ? 'dark' : 'light'));
-      },
-    }),
-    [],
-  );
+  // const [mode, setMode] = React.useState('light');
+  // const colorMode = React.useMemo(
+  //   () => ({
+  //     Home: () => {
+  //       setMode((prevMode) => (prevMode === 'light' ? 'dark' : 'light'));
+  //     },
+  //   }),
+  //   [],
+  // );
 
-  const theme = React.useMemo(
-    () =>
-      createTheme({
-        palette: {
-          mode,
-        },
-      }),
-    [mode],
-  );
+  // const theme = React.useMemo(
+  //   () =>
+  //     createTheme({
+  //       palette: {
+  //         mode,
+  //       },
+  //     }),
+  //   [mode],
+  // );
   const ColorModeContext = React.createContext({ Home: () => {} });
   return (
 
-    <ColorModeContext.Provider value={colorMode}>
-      <ThemeProvider theme={theme}>
-      <CssBaseline />
+    // <ColorModeContext.Provider value={colorMode}>
+    //   <ThemeProvider theme={theme}>
+    //   <CssBaseline />
     <Box sx={{ display: 'flex' }}>
       <AppBar component="nav">
         <Toolbar>
@@ -108,6 +108,7 @@ function NavBar(props) {
           
             <Button variant="outlined" sx={{ color: '#fff' }}   href="/">Home</Button>
             <Button sx={{ color: '#fff' }} href="/SignUp">Sign Up</Button>
+            <Button sx={{ color: '#fff' }} href="/SignIn">Sign In</Button>
           </Box>
           {/* For Dark & Light Mode */}
           <Box
@@ -120,15 +121,15 @@ function NavBar(props) {
         color: 'text.primary',
         borderRadius: 1,
         p: 0.5,
-        borderColor:'primary'
+       
       }}
     >
-        <Button  variant="outlined">
+        {/* <Button  variant="outlined">
         {theme.palette.mode} 
       <IconButton sx={{ ml: 1 }} onClick={colorMode.Home} color="inherit">
         {theme.palette.mode === 'dark' ? <Brightness7Icon /> : <Brightness4Icon />}
       </IconButton>
-        </Button>
+        </Button> */}
      
     </Box>
           
@@ -156,8 +157,8 @@ function NavBar(props) {
     
 
     </Box>
-    </ThemeProvider>
-    </ColorModeContext.Provider>
+    // </ThemeProvider>
+    // </ColorModeContext.Provider>
   );
 }
 
