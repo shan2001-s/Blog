@@ -7,22 +7,9 @@ import LockOpenIcon from '@mui/icons-material/LockOpen';
 function SignUp() {
   return (
     <div className="SignUp">
-      {/* <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header> */}
+
       
-      <Container maxWidth="sm" sx={{  padding: '60px'}}>
+      <Container maxWidth="sm" sx={{  padding: '30px'}}>
         <Box component="span" sx={{
         
         

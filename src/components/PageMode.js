@@ -11,6 +11,8 @@ import SignUp from './sign_up';
 import App from '../App';
 import { Route,Switch } from 'react-router-dom';
 import { BrowserRouter as Router } from 'react-router-dom';
+import { Mode } from '@mui/icons-material';
+
 
 const ColorModeContext = React.createContext({ toggleColorMode: () => {} });
 
@@ -27,10 +29,10 @@ export  function MyApp() {
         bgcolor: 'background.default',
         color: 'text.primary',
         borderRadius: 1,
-        p: 3,
+        p: 1,
       }}
     >
-      {theme.palette.mode} mode
+      {theme.palette.mode} 
       <IconButton sx={{ ml: 1 }} onClick={colorMode.toggleColorMode} color="inherit">
         {theme.palette.mode === 'dark' ? <Brightness7Icon /> : <Brightness4Icon />}
       </IconButton>
@@ -38,7 +40,7 @@ export  function MyApp() {
   );
 }
 
-export default function ToggleColorMode() {
+export  function ToggleColorMode() {
   const [mode, setMode] = React.useState('light');
   const colorMode = React.useMemo(
     () => ({

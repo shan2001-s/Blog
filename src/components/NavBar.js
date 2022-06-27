@@ -14,10 +14,12 @@ import Toolbar from '@mui/material/Toolbar';
 import Typography from '@mui/material/Typography';
 import Button from '@mui/material/Button';
 import Home from './Home';
+import {ToggleColorMode} from './PageMode'
 import { useTheme, ThemeProvider, createTheme } from '@mui/material/styles';
 import Brightness4Icon from '@mui/icons-material/Brightness4';
 import Brightness7Icon from '@mui/icons-material/Brightness7';
 import { CssBaseline } from '@mui/material';
+import Container from '@mui/material/Container';
 
 
 const drawerWidth = 240;
@@ -52,6 +54,11 @@ function NavBar(props) {
               <ListItemText primary="SignUp"/>
             </ListItemButton>
           </ListItem>
+          <ListItem  disablePadding >
+            <ListItemButton sx={{ textAlign: 'center' }}  href="/SignIn">
+              <ListItemText primary="SignIn"/>
+            </ListItemButton>
+          </ListItem>
      
       </List>
     
@@ -59,33 +66,14 @@ function NavBar(props) {
   );
 
   const container = window !== undefined ? () => window().document.body : undefined;
-  // for dark & Light mode
-  // const [mode, setMode] = React.useState('light');
-  // const colorMode = React.useMemo(
-  //   () => ({
-  //     Home: () => {
-  //       setMode((prevMode) => (prevMode === 'light' ? 'dark' : 'light'));
-  //     },
-  //   }),
-  //   [],
-  // );
-
-  // const theme = React.useMemo(
-  //   () =>
-  //     createTheme({
-  //       palette: {
-  //         mode,
-  //       },
-  //     }),
-  //   [mode],
-  // );
+ 
   const ColorModeContext = React.createContext({ Home: () => {} });
   return (
 
-    // <ColorModeContext.Provider value={colorMode}>
-    //   <ThemeProvider theme={theme}>
-    //   <CssBaseline />
+    
+   
     <Box sx={{ display: 'flex' }}>
+        
       <AppBar component="nav">
         <Toolbar>
           <IconButton
@@ -109,27 +97,15 @@ function NavBar(props) {
             <Button variant="outlined" sx={{ color: '#fff' }}   href="/">Home</Button>
             <Button sx={{ color: '#fff' }} href="/SignUp">Sign Up</Button>
             <Button sx={{ color: '#fff' }} href="/SignIn">Sign In</Button>
+          
+           
+            
           </Box>
-          {/* For Dark & Light Mode */}
+         
           <Box
-      sx={{
-        display: 'flex',
-      
-        alignItems: 'center',
-        justifyContent: 'center',
-        bgcolor: 'background.default',
-        color: 'text.primary',
-        borderRadius: 1,
-        p: 0.5,
-       
-      }}
+
     >
-        {/* <Button  variant="outlined">
-        {theme.palette.mode} 
-      <IconButton sx={{ ml: 1 }} onClick={colorMode.Home} color="inherit">
-        {theme.palette.mode === 'dark' ? <Brightness7Icon /> : <Brightness4Icon />}
-      </IconButton>
-        </Button> */}
+      <Button sx={{ color: '#fff' }} size="small"> <ToggleColorMode/></Button>
      
     </Box>
           
@@ -157,6 +133,7 @@ function NavBar(props) {
     
 
     </Box>
+   
     // </ThemeProvider>
     // </ColorModeContext.Provider>
   );

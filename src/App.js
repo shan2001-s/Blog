@@ -6,7 +6,9 @@ import LockOpenIcon from '@mui/icons-material/LockOpen';
 import SignUp from './components/sign_up';
 import Home from './components/Home';
 import NavBar from './components/NavBar';
-import PageMode from './components/PageMode'
+import PageMode from './components/PageMode';
+import Header from './components/Header';
+import Blog from './components/Blog';
 import { BrowserRouter as Router } from 'react-router-dom';
 
 import { Route,Switch } from 'react-router-dom';
@@ -17,8 +19,10 @@ function App() {
    
     <Router>
         <div className='App'>
-       
+       {/* <Blog/> */}
+
           <NavBar/>
+           
             
          
             <Switch>
@@ -29,12 +33,13 @@ function App() {
                 <SignIn/>
               </Route>
               <Route path="/">
-                  <Home/>
+                  <Blog/>
               </Route>
             </Switch>
 
           
           {/* <PageMode/> */}
+         
         </div>
      </Router>
   );
