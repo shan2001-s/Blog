@@ -1,3 +1,8 @@
+# Blog Template 
+
+ React.js + Material Ui
+include Light & Dark Mode in this Project.
+
 # Getting Started with Create React App
 
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
